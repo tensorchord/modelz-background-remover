@@ -20,7 +20,7 @@ concurrency:
 
 env:
   REGISTRY: docker.io
-  IMAGE_NAME: modelzai/streamlit-demo
+  IMAGE_NAME: modelzai/streamlit-background-remover
 
 
 jobs:

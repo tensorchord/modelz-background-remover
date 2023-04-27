@@ -10,14 +10,7 @@ def basic():
 # envd build --output type=image,name=<image>,push=true
 def build():
     basic()
-    io.copy("main.py", "/")
-    config.entrypoint(["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0","--server.enableCORS=false", "--server.enableXsrfProtection=false"])
-
-
-# build_gpu is a custom build function that will be used to build the GPU image.
-# envd build --output type=image,name=<image>,push=true -f :build_gpu
-def build_gpu():
-    basic()
-    install.cuda(version="11.6.2")
-    io.copy("main.py", "/")
+    io.copy("main.py", "/workspace/main.py")
+    io.copy("zebra.jpg", "/workspace/zebra.jpg")
+    io.copy("wallaby.png", "/workspace/wallaby.png")
     config.entrypoint(["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0","--server.enableCORS=false", "--server.enableXsrfProtection=false"])

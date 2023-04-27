@@ -1,11 +1,8 @@
-FROM python:3.9
-
-ARG GRADIO_SERVER_PORT=8080
-ENV GRADIO_SERVER_PORT=${GRADIO_SERVER_PORT}
+FROM python:3.10
 
 WORKDIR /workspace
 
-COPY . /workspace/
+ADD . /workspace/
 
 RUN pip install -r /workspace/requirements.txt
 
